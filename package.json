@@ -1,0 +1,26 @@
+{
+  "name": "rctrack",
+  "version": "1.0.0",
+  "description": "ALexa app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spark97/RCTrack.git"
+  },
+  "keywords": [
+    "records",
+    "cricket"
+  ],
+  "author": "Harshit Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spark97/RCTrack/issues"
+  },
+  "homepage": "https://github.com/spark97/RCTrack#readme",
+  "dependencies": {
+    "alexa-app": "^4.2.1"
+  }
+}
