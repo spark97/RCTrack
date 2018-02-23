@@ -6,18 +6,27 @@ var app = new alexa.app( 'rc-track' );
 
 
 const dhoni_records = [
-	"Dhoni is the only captain to win all 3 ICC trophies"
+	"Dhoni is the only captain to win all 3 ICC trophies",
+	"Dhoni has played the most number of matches as captain",
+	"Dhoni is the fastest player in T20 history to score 1000 runs without scoring a 50",
+	"Dhoni has the record for highest score by a wicket-keeper"
 ]
 
 const sachin_records = [
-	"Sachin has the highest centuries in ODI"
+	"Sachin has the highest centuries in ODIs",
+	"Sachin has played the most number of ODIs",
+	"Sachin has the longest ODI career",
+	"Sachin has the most ODI centuries"
 ]
 
 const kohli_records = [
-	"Kohli has the fastest ODI hundred for India"
+	"Kohli has the fastest ODI hundred for India",
+	"Kohli is the first batsman to score 4 double centuries in 4 consecutive test series",
+	"Kohli has the most number of centuries while chasing",
+	"Kohli is the first captain to hit six ODI centuries in a calendar year."
 ]
 
-
+var number_records = 4;
 
 app.launch( function( request, response ) {
 	response.say( 'Welcome to your test skill' ).reprompt( 'Way to go. You got it to run. Bad ass.' ).shouldEndSession( false );
@@ -43,14 +52,15 @@ app.intent('getPrice',
 function(request,response){
 	var name = request.slot('name');
 	var reply = "";
+	var ind = Math.floor((Math.random() * (number_records-1)) + 1);
 	if(name=="dhoni"){
-		reply = dhoni_records[0];
+		reply = dhoni_records[ind];
 	}
 	else if(name=="kohli"){
-		reply = kohli_records[0];
+		reply = kohli_records[ind];
 	}
 	else if(name="sachin"){
-		reply = sachin_records[0];
+		reply = sachin_records[ind];
 	}
 	response.say(reply);
 }
