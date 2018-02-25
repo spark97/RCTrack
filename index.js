@@ -40,13 +40,14 @@ app.error = function( exception, request, response ) {
 	response.say( 'Sorry an error occured ' + error.message);
 };
 
-app.intent('getPrice',
+app.intent('getRecord',
 {
 	"slots":{"name":"string"}
 	,"utterances":[ 
-	"tell me records of dhoni",
-	"tell me records of kohli",
-	"tell me records of sachin",
+	"tell me records of {name}",
+	"tell me records of {name}",
+	"tell me some facts about {name}",
+	"give me some details about {name} "
 	]
 },
 function(request,response){
